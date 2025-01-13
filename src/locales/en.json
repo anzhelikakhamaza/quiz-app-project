@@ -1,0 +1,66 @@
+{
+  "question": {
+    "language": "What is your preferred language?",
+    "gender": "What gender do you identify with?",
+    "age": "What is your age?",
+    "book_dislike": "What do you hate the most in a book?",
+    "favorite_topics": "What are your favorite topics?"
+  },
+  "subtitle": {
+    "language": "Choose a language",
+    "gender": "Please share how you identify yourself",
+    "favorite_topics": "Choose up to 3 topics you like"
+  },
+  "answers": {
+    "english": "English",
+    "french": "French",
+    "german": "German",
+    "spanish": "Spanish"
+  },
+  "gender": {
+    "female": "Female",
+    "male": "Male",
+    "other": "Other"
+  },
+  "age": {
+    "18_29": "18-29 years",
+    "30_39": "30-39 years",
+    "40_49": "40-49 years",
+    "50_plus": "50+"
+  },
+  "book_dislike": {
+    "logic": "Lack of logic",
+    "speed": "A slow pace",
+    "humor": "Lack of humor",
+    "ending": "Way too generic ending"
+  },
+  "topic": {
+    "werewolf": "Werewolf",
+    "action": "Action",
+    "royal_obsession": "Royal Obsession",
+    "billionaire": "Billionaire",
+    "romance": "Romance",
+    "young_adult": "Young Adult",
+    "bad_boy": "Bad Boy"
+  },
+  "progressCircle": {
+    "findingCollections": "Finding collections for you..."
+  },
+  "emailComponent": {
+  "title": "Email",
+  "subtitle": "Enter your email to get full access",
+  "placeholder": "Your email",
+  "errorMessage": "Please enter a valid email address.",
+  "policy": {
+    "text": "By continuing I agree with",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use"
+  }
+  },
+  "thankYou": {
+    "title": "Thank you",
+    "subtitle": "for supporting us and passing quiz",
+    "downloadButton": "Download my answers",
+    "retakeButton": "Retake quiz"
+  }
+}

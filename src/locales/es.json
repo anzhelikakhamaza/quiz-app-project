@@ -1,0 +1,58 @@
+{
+  "question": {
+    "gender": "¿Con qué género te identificas?",
+    "age": "¿Cuál es tu edad?",
+    "book_dislike": "¿Qué es lo que más odias de un libro?",
+    "favorite_topics": "¿Cuáles son tus temas favoritos?"
+  },
+  "subtitle": {
+    "gender": "Por favor, comparte cómo te identificas",
+    "favorite_topics": "Elige hasta 3 temas que te gusten"
+  },
+  "gender": {
+    "female": "Femenino",
+    "male": "Masculino",
+    "other": "Otro"
+  },
+  "age": {
+    "18_29": "18-29 años",
+    "30_39": "30-39 años",
+    "40_49": "40-49 años",
+    "50_plus": "50+"
+  },
+  "book_dislike": {
+    "logic": "Falta de lógica",
+    "speed": "Un ritmo lento",
+    "humor": "Falta de humor",
+    "ending": "Un final demasiado genérico"
+  },
+  "topic": {
+    "werewolf": "Hombre lobo",
+    "action": "Acción",
+    "royal_obsession": "Obsesión real",
+    "billionaire": "Multimillonario",
+    "romance": "Romance",
+    "young_adult": "Juvenil",
+    "bad_boy": "Chico malo"
+  },
+  "progressCircle": {
+    "findingCollections": "Recherche de collections pour vous..."
+  },
+  "emailComponent": {
+  "title": "Correo electrónico",
+  "subtitle": "Introduce tu correo electrónico para obtener acceso completo",
+  "placeholder": "Tu correo electrónico",
+  "errorMessage": "Por favor, introduce una dirección de correo válida.",
+  "policy": {
+    "text": "Al continuar, acepto la",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso"
+  }
+  },
+  "thankYou": {
+    "title": "Gracias",
+    "subtitle": "por apoyarnos y aprobar el examen",
+    "downloadButton": "Descargar mis respuestas",
+    "retakeButton": "Volver a realizar el examen"
+  }
+}
