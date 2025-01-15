@@ -42,7 +42,7 @@
   "title": "Correo electrónico",
   "subtitle": "Introduce tu correo electrónico para obtener acceso completo",
   "placeholder": "Tu correo electrónico",
-  "errorMessage": "Por favor, introduce una dirección de correo válida.",
+  "errorMessage": "Por favor, introduce una dirección de correo válida. Ejemplo: email@email.com",
   "policy": {
     "text": "Al continuar, acepto la",
     "privacy": "Política de privacidad",

@@ -31,6 +31,8 @@ const subTitle = computed(() => questionsStore.questions[props.currentPage - 1]?
 </template>
 
 <style lang="scss">
+@use '@/assets/styles/base/variables' as *;
+
 .quiz-container {
   display: flex;
   flex-direction: column;
@@ -49,7 +51,7 @@ const subTitle = computed(() => questionsStore.questions[props.currentPage - 1]?
 }
 
 .quiz-question-subtitle {
-  color: var(--subtitle-color);
+  color: $subtitle-color;
   font-size: 16px;
   margin: 8px 0 0;
 }
@@ -68,19 +70,19 @@ const subTitle = computed(() => questionsStore.questions[props.currentPage - 1]?
   cursor: pointer;
   border: none;
   border-radius: 12px;
-  background-color: var(--option-button-bg-color);
-  color: var(--text-color);
+  background-color: $option-button-bg-color;
+  color: $text-color;
   text-align: center;
   transition: background-color 0.3s ease;
 }
 
 .quiz-button:hover {
-  background-color: var(--option-button-hover-color);
+  background-color: $button-color;
 }
 
 .quiz-button--active {
-  background-color: var(--option-button-hover-color);
+  background-color: $button-color;
   font-weight: bold;
-  border: 1px solid var(--option-button-bg-color);
+  border: 1px solid $option-button-bg-color;
 }
 </style>

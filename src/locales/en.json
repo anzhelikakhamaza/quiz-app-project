@@ -50,7 +50,7 @@
   "title": "Email",
   "subtitle": "Enter your email to get full access",
   "placeholder": "Your email",
-  "errorMessage": "Please enter a valid email address.",
+  "errorMessage": "Please enter a valid email address. Example: email@email.com",
   "policy": {
     "text": "By continuing I agree with",
     "privacy": "Privacy policy",

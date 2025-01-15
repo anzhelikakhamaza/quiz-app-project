@@ -2,11 +2,11 @@
 import { computed, ref } from "vue";
 
 import Stepper from "@/components/Stepper.vue";
-import LanguageSelect from "@/components/QuestionWrapper/LanguageSelect.vue";
-import GenderSelect from "@/components/QuestionWrapper/GenderSelect.vue";
-import AgeSelect from "@/components/QuestionWrapper/AgeSelect.vue";
-import BookPreferences from "@/components/QuestionWrapper/BookPreferences.vue";
-import FavoriteTopics from "@/components/QuestionWrapper/FavoriteTopics.vue";
+import LanguageSelect from "@/components/QuestionsWrapper/LanguageSelect.vue";
+import GenderSelect from "@/components/QuestionsWrapper/GenderSelect.vue";
+import AgeSelect from "@/components/QuestionsWrapper/AgeSelect.vue";
+import BookPreferences from "@/components/QuestionsWrapper/BookPreferences.vue";
+import FavoriteTopics from "@/components/QuestionsWrapper/FavoriteTopics.vue";
 import CircleLoader from "@/components/CircleLoader.vue";
 import EmailVerification from "@/components/EmailVerification.vue";
 import ThankYou from "@/components/ThankYou.vue";
@@ -22,7 +22,7 @@ const pageObject = {
   8: ThankYou,
 };
 
-const currentPage = ref(1);
+const currentPage = ref(4);
 const totalPage = ref(8);
 
 const getQuestionsComponent = () => {

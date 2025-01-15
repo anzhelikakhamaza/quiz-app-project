@@ -51,6 +51,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/styles/base/variables' as *;
+
 .circle {
   display: flex;
   flex-direction: column;
@@ -68,13 +70,13 @@ onMounted(() => {
 
     .circle-bg {
       fill: none;
-      stroke: #cccccc;
+      stroke: $subtitle-color;
       stroke-width: 10;
     }
 
     .circle-progress {
       fill: none;
-      stroke: var(--button-color, #ff0099);
+      stroke: $button-color;
       stroke-width: 10;
       stroke-linecap: round;
       stroke-dasharray: 282.743;
@@ -84,7 +86,7 @@ onMounted(() => {
 
     .percentage-title {
       font-size: 20px;
-      fill: var(--text-color, white);
+      fill: $text-color;
       transform: rotate(90deg);
       transform-origin: center;
     }
@@ -94,7 +96,7 @@ onMounted(() => {
     font-size: 18px;
     margin-top: 1rem;
     font-weight: bold;
-    color: var(--text-color, white);
+    color: $text-color;
   }
 }
 </style>

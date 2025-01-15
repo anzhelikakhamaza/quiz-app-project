@@ -41,7 +41,7 @@ export const useQuestionsStore = defineStore("questions", {
                     "book_dislike.humor",
                     "book_dislike.ending"
                 ],
-                selectedValue: null
+                selectedValue: []
             },
             {
                 id: 5,
@@ -56,7 +56,7 @@ export const useQuestionsStore = defineStore("questions", {
                     "topic.young_adult",
                     "topic.bad_boy"
                 ],
-                selectedValue: null
+                selectedValue: []
             },
         ],
     }),

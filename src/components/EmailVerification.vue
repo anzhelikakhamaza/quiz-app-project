@@ -16,8 +16,8 @@ const validateEmail = () => {
   const isValidEmail = /\S+@\S+\.\S+/.test(email.value);
   errorMessage.value = isValidEmail
       ? null
-      : "Please enter a valid email address. Example: email@mail.com";
 
+: "Please enter a valid email address. Example: email@mail.com";
   emit("updateValidationState", isValidEmail);
 };
 </script>
@@ -55,6 +55,8 @@ const validateEmail = () => {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/styles/base/variables' as *;
+
 .email-container {
   width: 100%;
   max-width: 600px;
@@ -79,12 +81,12 @@ const validateEmail = () => {
         font-size: 30px;
         margin-bottom: 4px;
         font-weight: bold;
-        color: var(--text-color);
+        color: $text-color;
       }
 
       .email-subtitle {
         font-size: 16px;
-        color: var(--subtitle-color);
+        color: $subtitle-color;
         margin: 0;
       }
     }
@@ -93,38 +95,38 @@ const validateEmail = () => {
       width: 100%;
       padding: 14px 16px;
       font-size: 16px;
-      color: var(--text-color);
+      color: $text-color;
       border: none;
       border-radius: 12px;
-      background-color: var(--option-button-bg-color);
+      background-color: $option-button-bg-color;
       outline: none;
 
       &:focus {
-        border: 1px solid var(--button-color);
+        border: 1px solid $button-color;
       }
     }
 
     .error-message {
-      color: #ff4d4f;
+      color: $error-message-color;
       font-size: 14px;
-      margin-top: -8px;
+      margin-top: -50px;
       text-align: center;
       line-height: 1.4;
     }
 
     .policy {
       font-size: 14px;
-      color: var(--subtitle-color);
+      color: $subtitle-color;
       text-align: center;
       line-height: 1.4;
 
       .link {
-        color: var(--button-color);
+        color: $button-color;
         text-decoration: none;
         transition: color 0.2s ease;
 
         &:hover {
-          color: var(--button-hover-color);
+          color: $button-hover-color;
           text-decoration: underline;
         }
       }

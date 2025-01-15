@@ -18,11 +18,8 @@ const questionIndex = props.currentPage - 1;
 
 let currentQuestionIndex = ref(0);
 
-const handleSubmit = () => {
+const onClickRetakeButton = () => {
   currentQuestionIndex.value = 0;
-  if (questionsStore.questions[questionIndex]) {
-    questionsStore.questions[questionIndex].selectedValue = [];
-  }
 
   emit('update:currentPage', 1);
 };
@@ -31,10 +28,10 @@ const rows = questionsStore.questions.map((question) => [t(question.question), t
 
 let csvContent = "Question,Answer\r\n";
 
-rows.forEach(function(rowArray) {
-    let row = rowArray.join(",");
-    csvContent += row + "\r\n";
-  });
+rows.forEach((rowArray) => {
+  const row = rowArray.join(",");
+  csvContent += row + "\r\n";
+});
 
 const downloadCSV = () => {
     let link = document.createElement("a");
@@ -42,9 +39,7 @@ const downloadCSV = () => {
     let url = URL.createObjectURL(blob);
     link.setAttribute("href", url);
     link.setAttribute("download", "user_answers.csv");
-    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
   }
 </script>
 
@@ -64,11 +59,13 @@ const downloadCSV = () => {
       <p class="thank-you_download-button" @click="downloadCSV">{{ t('thankYou.downloadButton') }}</p>
     </div>
 
-    <button class="thank-you_button" @click="handleSubmit">{{ t('thankYou.retakeButton') }}</button>
+    <button class="thank-you_button" @click="onClickRetakeButton">{{ t('thankYou.retakeButton') }}</button>
   </div>
 </template>
 
 <style lang="scss">
+@use '@/assets/styles/base/variables' as *;
+
 .thank-you_container {
   width: 100%;
   max-width: 600px;
@@ -89,12 +86,12 @@ const downloadCSV = () => {
     .thank-you_title {
       font-size: 32px;
       font-weight: bold;
-      color: var(--text-color);
+      color: $text-color;
     }
 
     .thank-you_subtitle {
       font-size: 18px;
-      color: var(--subtitle-color);
+      color: $subtitle-color;
     }
   }
 
@@ -128,24 +125,24 @@ const downloadCSV = () => {
     .thank-you_download-button {
       font-size: 17px;
       font-weight: 500;
-      color: var(--text-color);
+      color: $text-color;
     }
   }
 
   .thank-you_button {
     width: 25vw;
     padding: 16px;
-    background-color: var(--button-color);
+    background-color: $button-color;
     border: none;
     border-radius: 12px;
-    color: #ffffff;
+    color: $text-color;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover {
-      background-color: var(--button-hover-color);
+      background-color: $button-hover-color;
       transform: scale(1.02);
     }
   }

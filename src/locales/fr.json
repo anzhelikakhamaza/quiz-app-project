@@ -42,7 +42,7 @@
   "title": "E-mail",
   "subtitle": "Entrez votre e-mail pour accéder pleinement",
   "placeholder": "Votre e-mail",
-  "errorMessage": "Veuillez entrer une adresse e-mail valide.",
+  "errorMessage": "Veuillez entrer une adresse e-mail valide. Exemple : email@email.com",
   "policy": {
     "text": "En continuant, j'accepte la",
     "privacy": "Politique de confidentialité",

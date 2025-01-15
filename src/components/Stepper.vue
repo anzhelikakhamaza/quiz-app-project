@@ -1,6 +1,5 @@
 <script setup>
 import { computed, ref } from "vue";
-import "@/assets/base.css";
 import NextStepButton from "@/components/NextStepButton.vue";
 import useQuestionsStore from "@/stores/questionsStore.js";
 
@@ -50,8 +49,6 @@ const onClickPreviousButton = () => {
 
 const onClickNextButton = () => {
   emit("nextStepButton");
-
-  console.log(props.isDefaultValidEmail);
 };
 </script>
 
@@ -97,6 +94,8 @@ const onClickNextButton = () => {
 </template>
 
 <style lang="scss">
+@use '@/assets/styles/base/variables' as *;
+
 .step-container {
   width: 100%;
   max-width: 500px;
@@ -125,7 +124,7 @@ const onClickNextButton = () => {
         .step-back-button {
           background: none;
           border: none;
-          color: var(--button-color);
+          color: $button-color;
           font-size: 24px;
           cursor: pointer;
           transition: transform 0.2s ease;
@@ -143,13 +142,13 @@ const onClickNextButton = () => {
 
       .step-page-indicator {
         font-size: 16px;
-        color: var(--indicator-text-color);
+        color: $subtitle-color;
         display: flex;
         align-items: center;
         font-weight: 500;
 
         .step-current-page {
-          color: var(--button-color);
+          color: $button-color;
           font-weight: bold;
         }
       }
@@ -158,13 +157,13 @@ const onClickNextButton = () => {
     .step-progress-bar {
       width: 100%;
       height: 6px;
-      background-color: var(--progress-bar-bg);
+      background-color: $progress-bar-bg;
       border-radius: 4px;
       overflow: hidden;
 
       .step-progress-bar-fill {
         height: 6px;
-        background-color: var(--progress-bar-fill);
+        background-color: $progress-bar-fill;
         transition: width 0.3s ease;
       }
     }
