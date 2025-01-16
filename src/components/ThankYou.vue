@@ -4,17 +4,9 @@ import {ref} from "vue";
 import {useI18n} from "vue-i18n";
 const { t } = useI18n();
 
-const props = defineProps({
-  currentPage: {
-    type: Number,
-    required: true,
-  }
-})
-
 const emit = defineEmits(['update: currentPage']);
 
 const questionsStore = useQuestionsStore();
-const questionIndex = props.currentPage - 1;
 
 let currentQuestionIndex = ref(0);
 

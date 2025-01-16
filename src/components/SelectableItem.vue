@@ -37,8 +37,8 @@ const handleOptionSelection = (option) => {
   }
 
   if (props.currentPage === 4 || props.currentPage === 5) {
-    if (!Array.isArray(questionOption.selectedValue)) {
-      questionOption.selectedValue = [];
+    if (Array.isArray(questionOption.selectedValue)) {
+      questionOption.selectedValue.push(option);
       }
 
       if (questionOption.selectedValue.includes(option)) {
@@ -50,12 +50,10 @@ const handleOptionSelection = (option) => {
         return;
       }
 
-    questionOption.selectedValue.push(option);
     errorMessage.value = "";
   } else {
     questionOption.selectedValue = option;
   }
-
 };
 
 // const getSelectedValue = computed(
@@ -70,7 +68,7 @@ const showCheckbox = computed(() => props.currentPage === 4);
       v-for="(option, index) in options"
       :key="index"
       @click="handleOptionSelection(option)"
-      :class="{ 'quiz-button--active': questionOption.selectedValue.includes(option) }"
+      :class="{ 'quiz-button--active': (props.currentPage === 4 || props.currentPage === 5) ? questionOption.selectedValue.includes(option) : questionOption.selectedValue === option, }"
       class="quiz-button"
   >
     {{ t(option) }}

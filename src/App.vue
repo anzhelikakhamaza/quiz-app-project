@@ -22,7 +22,7 @@ const pageObject = {
   8: ThankYou,
 };
 
-const currentPage = ref(4);
+const currentPage = ref(1);
 const totalPage = ref(8);
 
 const getQuestionsComponent = () => {
