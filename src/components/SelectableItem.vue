@@ -47,18 +47,20 @@ const handleOptionSelection = (option) => {
 
       if (props.currentPage === 5 && questionOption.selectedValue.length >= 3) {
         errorMessage.value = "Not more than 3 options are allowed to choose";
+        return;
       }
 
     questionOption.selectedValue.push(option);
     errorMessage.value = "";
+  } else {
+    questionOption.selectedValue = option;
   }
 
-  questionOption.selectedValue = option;
 };
 
-const getSelectedValue = computed(
-    () => questionOption.selectedValue
-);
+// const getSelectedValue = computed(
+//     () => questionOption.selectedValue
+// );
 
 const showCheckbox = computed(() => props.currentPage === 4);
 </script>
@@ -68,7 +70,7 @@ const showCheckbox = computed(() => props.currentPage === 4);
       v-for="(option, index) in options"
       :key="index"
       @click="handleOptionSelection(option)"
-      :class="{ 'quiz-button--active': option === getSelectedValue }"
+      :class="{ 'quiz-button--active': questionOption.selectedValue.includes(option) }"
       class="quiz-button"
   >
     {{ t(option) }}
