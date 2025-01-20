@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import {useI18n} from "vue-i18n";
+import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const email = ref("");
@@ -15,9 +15,8 @@ const validateEmail = () => {
   }
   const isValidEmail = /\S+@\S+\.\S+/.test(email.value);
   errorMessage.value = isValidEmail
-      ? null
-
-: "Please enter a valid email address. Example: email@mail.com";
+    ? null
+    : "Please enter a valid email address. Example: email@mail.com";
   emit("updateValidationState", isValidEmail);
 };
 </script>
@@ -26,36 +25,39 @@ const validateEmail = () => {
   <div class="email-container">
     <div class="email-row">
       <div class="email">
-        <h1 class="email-title">{{ t('emailComponent.title') }}</h1>
-        <p class="email-subtitle">{{ t('emailComponent.subtitle') }}</p>
+        <h1 class="email-title">{{ t("emailComponent.title") }}</h1>
+        <p class="email-subtitle">{{ t("emailComponent.subtitle") }}</p>
       </div>
 
       <form>
         <input
-            class="email-input"
-            @input="validateEmail"
-            v-model="email"
-            type="email"
-            :placeholder="t('emailComponent.placeholder')"
-            required
+          class="email-input"
+          @input="validateEmail"
+          v-model="email"
+          type="email"
+          :placeholder="t('emailComponent.placeholder')"
+          required
         />
       </form>
 
-      <p class="error-message" v-if="errorMessage">{{ t('emailComponent.errorMessage') }}</p>
+      <p class="error-message" v-if="errorMessage">
+        {{ t("emailComponent.errorMessage") }}
+      </p>
 
       <p class="policy">
-        {{ t('emailComponent.policy.text') }}
-        <a href="#" class="link">{{ t('emailComponent.policy.privacy') }}</a>
-        {{ t('emailComponent.policy.and') }}
+        {{ t("emailComponent.policy.text") }}
+        <a href="#" class="link">{{ t("emailComponent.policy.privacy") }}</a>
+        {{ t("emailComponent.policy.and") }}
         <br />
-        <a href="#" class="link">{{ t('emailComponent.policy.terms') }}</a>.
+        <a href="#" class="link">{{ t("emailComponent.policy.terms") }}</a
+        >.
       </p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@use '@/assets/styles/base/variables' as *;
+@use "@/assets/styles/base/variables" as *;
 
 .email-container {
   width: 100%;

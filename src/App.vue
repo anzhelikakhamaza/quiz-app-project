@@ -1,6 +1,5 @@
 <script setup>
 import { computed, ref } from "vue";
-
 import Stepper from "@/components/Stepper.vue";
 import LanguageSelect from "@/components/QuestionsWrapper/LanguageSelect.vue";
 import GenderSelect from "@/components/QuestionsWrapper/GenderSelect.vue";
@@ -24,6 +23,7 @@ const pageObject = {
 
 const currentPage = ref(1);
 const totalPage = ref(8);
+let isDefaultValidEmail = ref(false);
 
 const getQuestionsComponent = () => {
   return pageObject[currentPage.value];
@@ -47,17 +47,14 @@ const handleProgressComplete = () => {
   }
 };
 
-const isHeaderHidden = computed(() => currentPage.value > 5);
-
-const isNextButtonHidden = computed(
-    () => currentPage.value === 6 || currentPage.value === 8
-);
-
-let isDefaultValidEmail = ref(false);
-
 const updateValidationState = (isValidEmail) => {
   isDefaultValidEmail.value = isValidEmail;
 }
+
+const isHeaderHidden = computed(() => currentPage.value > 5);
+const isNextButtonHidden = computed(
+    () => currentPage.value === 6 || currentPage.value === 8
+);
 </script>
 
 <template>

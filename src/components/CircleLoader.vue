@@ -1,26 +1,26 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import {useI18n} from "vue-i18n";
+import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const percentage = ref(0);
 const circumference = 2 * Math.PI * 45;
 
 const dashOffset = computed(() => {
-  return circumference - (circumference * (percentage.value / 100));
+  return circumference - circumference * (percentage.value / 100);
 });
 
-const emit = defineEmits(['progressComplete']);
+const emit = defineEmits(["progressComplete"]);
 
 onMounted(() => {
   const interval = setInterval(() => {
     if (percentage.value < 100) {
-      percentage.value += 10;
+      percentage.value += 1;
     } else {
       clearInterval(interval);
-      emit('progressComplete');
+      emit("progressComplete");
     }
-  }, 200);
+  }, 40);
 });
 </script>
 
@@ -28,30 +28,33 @@ onMounted(() => {
   <div class="progress-circle">
     <div class="circle">
       <svg viewBox="0 0 100 100">
+        <circle class="circle-bg" cx="50" cy="50" r="45" />
         <circle
-            class="circle-bg"
-            cx="50"
-            cy="50"
-            r="45"
+          class="circle-progress"
+          cx="50"
+          cy="50"
+          r="45"
+          :style="{ strokeDashoffset: dashOffset }"
         />
-        <circle
-            class="circle-progress"
-            cx="50"
-            cy="50"
-            r="45"
-            :style="{ strokeDashoffset: dashOffset }"
-        />
-        <text class="percentage-title" x="50" y="50" text-anchor="middle" dy=".3em">
+        <text
+          class="percentage-title"
+          x="50"
+          y="50"
+          text-anchor="middle"
+          dy=".3em"
+        >
           {{ percentage }}%
         </text>
       </svg>
-      <p class="collections-title">{{ t('progressCircle.findingCollections') }}</p>
+      <p class="collections-title">
+        {{ t("progressCircle.findingCollections") }}
+      </p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@use '@/assets/styles/base/variables' as *;
+@use "@/assets/styles/base/variables" as *;
 
 .circle {
   display: flex;

@@ -6,6 +6,7 @@ export const useQuestionsStore = defineStore("questions", {
             {
                 question: "question.language",
                 subtitle: "subtitle.language",
+                type: "single-select",
                 answers: [
                     "answers.english",
                     "answers.french",
@@ -18,6 +19,7 @@ export const useQuestionsStore = defineStore("questions", {
                 id: 2,
                 question: "question.gender",
                 subtitle: "subtitle.gender",
+                type: "single-select",
                 answers: ["gender.female", "gender.male", "gender.other"],
                 selectedValue: null
             },
@@ -25,6 +27,7 @@ export const useQuestionsStore = defineStore("questions", {
                 id: 3,
                 question: "question.age",
                 subtitle: "",
+                type: "single-select",
                 answers: ["age.18_29",
                     "age.30_39",
                     "age.40_49",
@@ -35,6 +38,7 @@ export const useQuestionsStore = defineStore("questions", {
                 id: 4,
                 question: "question.book_dislike",
                 subtitle: "",
+                type: "multiple-select",
                 answers: [
                     "book_dislike.logic",
                     "book_dislike.speed",
@@ -47,6 +51,7 @@ export const useQuestionsStore = defineStore("questions", {
                 id: 5,
                 question: "question.favorite_topics",
                 subtitle: "subtitle.favorite_topics",
+                type: "bubble",
                 answers: [
                     "topic.werewolf",
                     "topic.action",

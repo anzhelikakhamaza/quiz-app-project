@@ -7,7 +7,7 @@ const props = defineProps({
   isNextButtonDisabled: {
     type: Boolean,
     default: true,
-  }
+  },
 });
 
 const emit = defineEmits(["nextStepButton"]);
@@ -19,17 +19,17 @@ const onClickStepButton = () => {
 
 <template>
   <button
-      :disabled="props.isNextButtonDisabled"
-      v-show="!props.isNextButtonHidden"
-      class="step-next-button"
-      @click="onClickStepButton"
+    :disabled="props.isNextButtonDisabled"
+    v-show="!props.isNextButtonHidden"
+    class="step-next-button"
+    @click="onClickStepButton"
   >
     Next
   </button>
 </template>
 
 <style lang="scss" scoped>
-@use '@/assets/styles/base/variables' as *;
+@use "@/assets/styles/base/variables" as *;
 
 .step-next-button {
   width: 100%;

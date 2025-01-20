@@ -1,8 +1,8 @@
 <script setup>
+import { computed } from "vue";
 import useQuestionsStore from "@/stores/questionsStore.js";
-import {computed} from "vue";
 import SelectableItem from "@/components/SelectableItem.vue";
-import {useI18n} from "vue-i18n";
+import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const props = defineProps({
@@ -14,8 +14,12 @@ const props = defineProps({
 
 const questionsStore = useQuestionsStore();
 
-const questionTitle = computed(() => questionsStore.questions[props.currentPage - 1]?.question || "");
-const subTitle = computed(() => questionsStore.questions[props.currentPage - 1]?.subtitle || "");
+const questionTitle = computed(
+  () => questionsStore.questions[props.currentPage - 1]?.question || ""
+);
+const subTitle = computed(
+  () => questionsStore.questions[props.currentPage - 1]?.subtitle || ""
+);
 </script>
 
 <template>
@@ -25,13 +29,13 @@ const subTitle = computed(() => questionsStore.questions[props.currentPage - 1]?
       <p class="quiz-question-subtitle">{{ t(subTitle) }}</p>
     </div>
     <div class="quiz-buttons">
-      <SelectableItem  :current-page="currentPage"/>
+      <SelectableItem :current-page="currentPage" />
     </div>
   </div>
 </template>
 
 <style lang="scss">
-@use '@/assets/styles/base/variables' as *;
+@use "@/assets/styles/base/variables" as *;
 
 .quiz-container {
   display: flex;
@@ -81,8 +85,8 @@ const subTitle = computed(() => questionsStore.questions[props.currentPage - 1]?
 }
 
 .quiz-button--active {
-  background-color: $button-color;
+  background-color: $button-color-one;
   font-weight: bold;
-  border: 1px solid $option-button-bg-color;
+  border: solid $button-color;
 }
 </style>

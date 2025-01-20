@@ -6,11 +6,11 @@ defineProps({
     type: Number,
     required: true,
   },
-})
+});
 </script>
 
 <template>
-  <QuestionTemplate :currentPage="currentPage"/>
+  <QuestionTemplate :currentPage="currentPage" />
 </template>
 
 <style scoped></style>

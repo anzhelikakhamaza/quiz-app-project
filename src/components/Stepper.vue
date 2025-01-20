@@ -1,7 +1,7 @@
 <script setup>
-import { computed, ref } from "vue";
-import NextStepButton from "@/components/NextStepButton.vue";
+import { computed } from "vue";
 import useQuestionsStore from "@/stores/questionsStore.js";
+import NextStepButton from "@/components/NextStepButton.vue";
 
 const props = defineProps({
   currentPage: {
@@ -23,25 +23,23 @@ const props = defineProps({
   isDefaultValidEmail: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
 const questionsStore = useQuestionsStore();
-const questionIndex = computed(() => props.currentPage - 1);
+const emit = defineEmits(["nextStepButton", "previousStepButton"]);
 
 const isNextButtonDisabled = computed(() =>
-  (props.currentPage === 7)
-      ? !props.isDefaultValidEmail
-      : !questionsStore.questions[questionIndex.value].selectedValue
+  props.currentPage === 7
+    ? !props.isDefaultValidEmail
+    : !questionsStore.questions[questionIndex.value].selectedValue
 );
 
+const questionIndex = computed(() => props.currentPage - 1);
 const isHidden = computed(() => props.currentPage < 2);
-
 const progressBarIndex = computed(
-    () => `${(props.currentPage / props.totalPage) * 100}%`
+  () => `${(props.currentPage / props.totalPage) * 100}%`
 );
-
-const emit = defineEmits(["nextStepButton", "previousStepButton"]);
 
 const onClickPreviousButton = () => {
   emit("previousStepButton");
@@ -58,14 +56,14 @@ const onClickNextButton = () => {
       <div class="step-header-wrapper">
         <div class="step-header-button-wrapper">
           <div
-              v-show="!isHidden"
-              class="step-back-button"
-              @click="onClickPreviousButton"
+            v-show="!isHidden"
+            class="step-back-button"
+            @click="onClickPreviousButton"
           >
             <img
-                src="@/img/previousIcon.svg"
-                alt="previous icon"
-                class="button-icon"
+              src="@/img/previousIcon.svg"
+              alt="previous icon"
+              class="button-icon"
             />
           </div>
         </div>
@@ -76,8 +74,8 @@ const onClickNextButton = () => {
       </div>
       <div class="step-progress-bar">
         <div
-            class="step-progress-bar-fill"
-            :style="{ width: progressBarIndex }"
+          class="step-progress-bar-fill"
+          :style="{ width: progressBarIndex }"
         ></div>
       </div>
     </header>
@@ -85,16 +83,16 @@ const onClickNextButton = () => {
     <slot></slot>
 
     <NextStepButton
-        :disabled="isNextButtonDisabled"
-        v-if="!isNextButtonHidden"
-        @click="onClickNextButton"
-        :current-page="currentPage"
+      :disabled="isNextButtonDisabled"
+      v-if="!isNextButtonHidden"
+      @click="onClickNextButton"
+      :current-page="currentPage"
     />
   </div>
 </template>
 
 <style lang="scss">
-@use '@/assets/styles/base/variables' as *;
+@use "@/assets/styles/base/variables" as *;
 
 .step-container {
   width: 100%;
