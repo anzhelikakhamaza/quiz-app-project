@@ -110,20 +110,26 @@ const showCheckbox = computed(() => props.currentPage === 4);
       height: 20px;
       appearance: none;
       border-radius: 4px;
-      background-color: $background-color;
+      background-color: $checkbox-unchecked-color;
+      border: 2px solid $checkbox-unchecked-color;
+      position: relative;
       transition: all 0.3s ease;
 
       &:checked {
-        background-color: $button-color;
+        background-color: $checkbox-checked-color;
+        border-color: $checkbox-checked-color;
 
         &::after {
           content: "";
           display: block;
           width: 10px;
-          height: 10px;
-          margin: auto;
-          background-color: $button-color;
-          border-radius: 2px;
+          height: 5px;
+          border-left: 2px solid $text-color;
+          border-bottom: 2px solid $text-color;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
         }
       }
     }

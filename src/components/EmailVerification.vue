@@ -47,9 +47,7 @@ const validateEmail = () => {
       <p class="policy">
         {{ t("emailComponent.policy.text") }}
         <a href="#" class="link">{{ t("emailComponent.policy.privacy") }}</a>
-        {{ t("emailComponent.policy.and") }}
-        <br />
-        <a href="#" class="link">{{ t("emailComponent.policy.terms") }}</a
+        and <a href="#" class="link">{{ t("emailComponent.policy.terms") }}</a
         >.
       </p>
     </div>
